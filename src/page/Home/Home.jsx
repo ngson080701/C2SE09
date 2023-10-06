@@ -82,16 +82,6 @@ export default function Home() {
         <Telephone />
       </div>
       <Scroll />
-      <div className="video">
-        <ReactPlayer
-          url="https://youtu.be/r9lvNDkQhd4"
-          playing={true}
-          volume={1}
-          width="100%"
-          height="100%"
-          onReady={() => console.log("ready now")}
-        />
-      </div>
       <Footer />
     </div>
   );
