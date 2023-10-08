@@ -19,7 +19,7 @@ export default function Services() {
   const [shampoo, setShampoo] = useState([]);
   const [shave, setShave] = useState([]);
   const [hairCare, setHairCare] = useState([]);
-
+// nguyenson
   // useEffect(() => {
   //   const fetchData = async () => {
   //     const res = await axios.get(
