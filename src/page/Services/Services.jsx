@@ -19,36 +19,6 @@ export default function Services() {
   const [shampoo, setShampoo] = useState([]);
   const [shave, setShave] = useState([]);
   const [hairCare, setHairCare] = useState([]);
-// nguyenson
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await axios.get(
-  //       "http://localhost:8800/api/service/category?Category=CẮT TÓC"
-  //     );
-  //     setHairCut(res.data.value);
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await axios.get(
-  //       "http://localhost:8800/api/service/category?Category=Beard Trim"
-  //     );
-  //     setBeard(res.data.value);
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await axios.get(
-  //       "http://localhost:8800/api/service/category?Category=Curling hair"
-  //     );
-  //     setCurling(res.data.value);
-  //   };
-  //   fetchData();
-  // }, []);
 
   useEffect(() => {
     const fetchData = async () => {
