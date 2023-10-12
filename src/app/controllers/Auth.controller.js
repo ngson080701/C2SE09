@@ -53,14 +53,11 @@ export const RegisterForCustomer = async (req, res) => {
 export const LoginForCustomer = async (req, res) => {
   const responseType = {};
   // if (!req.body.token) {
-  //   // responseType.message = "reCaptcha token is missing";
+
   //   // responseType.status = 400;
   // }
   try {
-    // const googleVerifyUrl = https://www.google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}&response=${req.body.token};
-    // const response = await axios.post(googleVerifyUrl);
-    // const { success } = response.data;
-    // if (success) {
+ 
       const user = await Customer.findOne({
         Email: req.body.Email,
       });
@@ -88,7 +85,7 @@ export const LoginForCustomer = async (req, res) => {
     // }
   } 
   catch (error) {
-    // responseType.message = "reCaptcha is error";
+   
     responseType.status = 400;
   }
 
