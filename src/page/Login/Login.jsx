@@ -10,20 +10,18 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
-import ReCAPTCHA from "react-google-recaptcha";
 
-const SITE_KEY = "6Lc7fhAjAAAAAGx42AoXHeM-zx_wONWme7aRc0xn";
+
+
 
 export default function Login() {
   // check show password text
   const [pass, setPass] = useState(false);
   // re captcha
-  const captchaRef = useRef();
-  const [recaptchaValue, setRecaptchaValue] = useState("");
 
-  const onChange = (value) => {
-    setRecaptchaValue(value);
-  };
+  
+
+ 
 
   const toggleBtn = (e) => {
     e.preventDefault();
@@ -43,7 +41,7 @@ export default function Login() {
   const [errField, setErrField] = useState({
     EmailErr: "",
     PasswordErr: "",
-    CaptchaErr: "",
+    
   });
 
   const resetForm = () => {
@@ -55,7 +53,7 @@ export default function Login() {
       setErrField({
         EmailErr: "",
         PasswordErr: "",
-        CaptchaErr: "",
+        
       });
     }, 3000);
   };
@@ -92,13 +90,7 @@ export default function Login() {
       }));
     }
 
-    if (recaptchaValue === "") {
-      formValid = false;
-      setErrField((prevState) => ({
-        ...prevState,
-        CaptchaErr: "Please check captcha",
-      }));
-    }
+    
 
     resetForm();
     return formValid;
@@ -111,12 +103,12 @@ export default function Login() {
     dispatch({
       type: "LOGIN_START",
     });
-    captchaRef.current.reset();
+   
     if (validateForm()) {
       const data = {
         Email: inputField.Email,
         Password: inputField.Password,
-        token: recaptchaValue,
+      
       };
 
       try {
@@ -195,16 +187,7 @@ export default function Login() {
           {errField.PasswordErr.length > 0 && (
             <span className="error">{errField.PasswordErr} </span>
           )}
-          <div className="user-box">
-            <ReCAPTCHA
-              sitekey={SITE_KEY}
-              onChange={onChange}
-              ref={captchaRef}
-            />
-          </div>
-          {errField.CaptchaErr.length > 0 && (
-            <span className="error">{errField.CaptchaErr} </span>
-          )}
+          
           {/* link to forget page */}
           <div className="user-box">
             <Link to="/reset">
