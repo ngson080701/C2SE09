@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/login.css";
 import {
   AiOutlineArrowRight,
@@ -96,7 +96,7 @@ export default function Login() {
     return formValid;
   };
 
-  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+  const {  isFetching, dispatch } = useContext(AuthContext);
 
   const handleClick = async (e) => {
     e.preventDefault();

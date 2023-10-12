@@ -1,10 +1,6 @@
 import React from "react";
 import "../../styles/components/footer.css";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { FiChevronRight, FiSend } from "react-icons/fi";
-import { Link } from "react-router-dom";
-import { BsTelephoneForward } from "react-icons/bs";
-import { MdPlace } from "react-icons/md";
+
 import { AiFillHeart } from "react-icons/ai";
 import axios from "axios";
 import { useState, useEffect } from "react";
